@@ -29,6 +29,7 @@ services:
             - "host.docker.internal:host-gateway"
             - "storage.${NGINX_HOST_NAME}:${REVERSE_PROXY_IP:-10.100.100.10}"
         environment:
+            AUTO_DB_MIGRATE: "true"
             XDG_CONFIG_HOME: /var/www/html/config
             XDG_DATA_HOME: /var/www/html/data
             WWWUSER: '${WWWUSER}'
